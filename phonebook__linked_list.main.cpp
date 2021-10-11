@@ -10,6 +10,6 @@ int main ()
 	for (int i = 0; i < 3; i++)
 		pEnd = Addltem (pEnd);
 
-	cout << "\nÂàø ñïèñîê:" << endl;
+	cout << "\nÐ’Ð°Ñˆ ÑÐ¿Ð¸ÑÐ¾Ðº:" << endl;
 	PrintList (pBegin);
 }
