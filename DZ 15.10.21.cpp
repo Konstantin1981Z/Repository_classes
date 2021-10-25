@@ -1,34 +1,37 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <Windows.h>
 using namespace std;
-
-void InsertionSort (int* values, int size, bool (*foo)(int, int)) {
-    for (int i = 1; i < size; ++i) {
-        int x = values[i];
-        int j = i;
-        while (j > 0 && values[j - 1] > x) {
-            values[j] = values[j - 1];
-            --j;
-        }
-        values[j] = x;
-    }
-}
-
-bool po_vozr (int a, int b) { return a > b; }
-bool po_ub (int a, int b) { return a < b; }
-
 
 int main ()
 {
-	setlocale (LC_ALL, "rus");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	ifstream fin;
+	int count = 0;
+	fin.open ("Word.txt");
+	if (fin.is_open ())
+	{
+		string str;
+		while (!fin.eof())
+		{
+			getline (fin, str);
+			count++;
+			
+		}
+		cout << count << endl;
+	}
+	else
+	{
+		cout << "Невозможно найти файл";
+	}
+	fin.close ();
 
-    int array[] = {2,9,4,6,3,4,5,6,4,8};
-    InsertionSort (array, 10, po_ub);
+	srand((unsigned)time (NULL));
+	int run = rand () % count + 1;
+	cout << run << endl;
 
-    for (int i = 0; i < 10; i++)
-    {
-        cout << array[i] << ' ';
-    }
-    return 0;
+
+	return 0;
 }
