@@ -18,7 +18,6 @@ int main ()
 		{
 			getline (fin, str);
 			count++;
-			
 		}
 		cout << count << endl;
 	}
