@@ -48,5 +48,12 @@ int main ()
 	{
 		cout << "_" << " ";
 	}
+	while (true)
+	{
+		string enter;
+		cin >> enter;
+		if (enter == str)
+			cout << str << endl;
+	}
 	return 0;
 }
