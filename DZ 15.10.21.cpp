@@ -44,16 +44,33 @@ int main ()
 			word_ind++;
 		}
 	}
+	string otvet = str;
 	for (int i = 0; i < str.length (); i++)
 	{
 		cout << "_" << " ";
+		otvet[i] = '_';
 	}
-	while (true)
+	cout << endl;
+	int emaunt = 0;
+	while (emaunt < 3)
 	{
-		string enter;
+		char enter;
 		cin >> enter;
-		if (enter == str)
-			cout << str << endl;
+		for (int i = 0; i < str.length (); i++)
+		{
+			if (enter == str[i])
+			{ 
+				otvet[i] = str[i];
+			}
+			else
+				emaunt++;
+		}
+		for (int i = 0; i < otvet.length (); i++)
+		{
+			cout << otvet[i] << " ";
+			
+		}
+		cout << endl;
 	}
 	return 0;
 }
