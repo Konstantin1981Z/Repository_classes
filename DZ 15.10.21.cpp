@@ -26,7 +26,7 @@ int main ()
 	}
 	fin.close ();
 
-	fin.open("Word.txt");
+	fin.open ("Word.txt");
 	srand ((unsigned)time (NULL));
 	int run = rand () % count + 1;
 	//cout << run << endl;
@@ -38,7 +38,7 @@ int main ()
 			getline (fin, str);
 			if (run == word_ind)
 			{
-				cout << str << endl;
+				//cout << str << endl;
 				break;
 			}
 			word_ind++;
@@ -51,26 +51,39 @@ int main ()
 		otvet[i] = '_';
 	}
 	cout << endl;
-	int emaunt = 0;
-	while (emaunt < 3)
+	int emaunt = 1;
+
+	while (true)
 	{
 		char enter;
 		cin >> enter;
-		for (int i = 0; i < str.length (); i++)
+		if (emaunt >=3 )
 		{
-			if (enter == str[i])
-			{ 
-				otvet[i] = str[i];
-			}
-			else
-				emaunt++;
+			cout << "\n  УВЫ! Конец игры! У вас было всего три попытки." << endl; 
+			break;	
 		}
-		for (int i = 0; i < otvet.length (); i++)
-		{
-			cout << otvet[i] << " ";
 			
+		else
+		{
+			bool bukva = false;
+			for (int i = 0; i < str.length (); i++)
+			{
+				if (enter == str[i])
+				{
+					otvet[i] = str[i];
+					bukva = true;
+				}
+				
+			}
+				if(!bukva )
+					emaunt++;
+			for (int i = 0; i < otvet.length (); i++)
+			{
+				cout << otvet[i] << " ";
+			}
+			cout <<  endl;
 		}
-		cout << endl;
+
 	}
 	return 0;
 }
