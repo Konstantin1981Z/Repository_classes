@@ -57,9 +57,9 @@ int main ()
 	{
 		char enter;
 		cin >> enter;
-		if (emaunt >=3 )
+		if (emaunt >=5 )
 		{
-			cout << "\n  УВЫ! Конец игры! У вас было всего три попытки." << endl; 
+			cout << "\n  УВЫ! Конец игры! У вас было всего пять попыток." << endl; 
 			break;	
 		}
 			
@@ -82,8 +82,35 @@ int main ()
 				cout << otvet[i] << " ";
 			}
 			cout <<  endl;
+			/*
+			ifstream fin (emaunt ".txt");
+			int count = 0;
+			string str;
+			if (fin.is_open ())
+			{
+				while (!fin.eof ())
+				{
+					getline (fin, str);
+					count++;
+				}
+				//cout << count << endl;
+			}
+			else
+			{
+				cout << "Невозможно найти файл";
+			}
+			fin.close ();
+
+			fin.open (emaunt ".txt");
+			srand ((unsigned)time (NULL));
+			int run = rand () % count + 1;*/
 		}
 
+		if (otvet == str)
+		{
+			cout << "\n  Вы молодец! Вы угодали слово. Попробуйте ещё разок." << endl;
+			return 0;
+		}
 	}
 	return 0;
 }
